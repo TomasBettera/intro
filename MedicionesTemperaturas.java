@@ -55,8 +55,46 @@ public class MedicionesTemperaturas
         return cantExtrema;
     }
     
+    public int promedio(){
+        int promedio = 0;
+        int contador = 0;
+        while(contador < registros.size()){
+            promedio = promedio + registros.get(contador);
+            contador++;
+        }
+        return promedio / registros.size();
+    }
     
-    pbuli 
+    public int maxTemp(){
+        int maxima = registros.get(0);
+        int contador = 0;
+        while(contador < registros.size()){
+            if(maxima < registros.get(contador)){
+                maxima = registros.get(contador);
+            }
+            contador++;
+        }
+        return maxima;
+    }
+    
+    public int minTemp(){
+        int minima = registros.get(0);
+        int contador = 0;
+        while(contador < registros.size()){
+            if(minima > registros.get(contador)){
+                minima = registros.get(contador);
+            }
+            contador++;
+        }
+        return minima;
+    }
+    
+    public int difTemp(){
+        int maxima = maxTemp();
+        int minima = minTemp();
+        return maxima - minima;
+    }
+    
     /**
      * Muestra todas las temperaturas registradas en 
      * la pantalla. 
